@@ -72,7 +72,7 @@ def create_model(layers, activation):
 model = KerasClassifier(build_fn=create_model, verbose=0)
 
 
-layers = [[20], [40, 20], [45, 30, 15]]
+layers = [(20,), (40, 20), (45, 30, 15)]
 activations = ['sigmoid', 'relu']
 param_grid = dict(layers=layers, activation=activations, batch_size = [128, 256], epochs=[30])
 grid = GridSearchCV(estimator=model, param_grid=param_grid,cv=5)
